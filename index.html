@@ -370,18 +370,6 @@
     
                 /* ... other small mobile styles ... */
             }
-
-            /* Add this to your existing styles */
-            html, body {
-                overflow-x: hidden;
-                scroll-behavior: smooth;
-            }
-
-            body {
-                position: relative;
-                top: 0;
-                left: 0;
-            }
         </style>
     </head>
 <body>
@@ -482,9 +470,9 @@
 
     <script>
         AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+            // duration: 1000,
+            // once: true,
+            // offset: 100
         });
 
         // Countdown Timer
@@ -508,30 +496,12 @@
         updateCountdown();
     </script>
     <script>
-        // Replace your existing script or add this if you don't have a script tag
-        (function() {
+        // Add this to the top of your script section
+        window.addEventListener('load', function() {
             window.scrollTo(0, 0);
-            
-            if ('scrollRestoration' in history) {
-                history.scrollRestoration = 'manual';
-            }
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                window.scrollTo(0, 0);
-            });
-
-            window.addEventListener('load', function() {
-                setTimeout(function() {
-                    window.scrollTo(0, 0);
-                }, 0);
-            });
-
-            window.addEventListener('beforeunload', function() {
-                window.scrollTo(0, 0);
-            });
-        })();
-
-        // ... your existing JavaScript ...
+        });
+    
+        // ... rest of your existing JavaScript ...
     </script>
 </body>
 </html>

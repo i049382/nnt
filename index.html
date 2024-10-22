@@ -6,6 +6,8 @@
         <title>No Nut Token (NoNut)</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <!-- Add this line to import Fredoka One font -->
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         <style>
             * {
                 margin: 0;
@@ -65,21 +67,21 @@
                 right: 0;
                 /* width: 40%; */
                 max-width: 1000px;
-                height: auto;
                 display: flex;
+                align-items: center;
                 justify-content: center;
-                align-items: flex-end;
             }
     
             .logo-container img {
                 aspect-ratio: 4 / 3;
-    width: 100%;
+    width: 150%;
     height: auto;
     object-fit: cover;
     object-position: top;
             }
     
             h1 {
+                font-family: 'Fredoka One', cursive; /* Apply Fredoka One font */
                 font-size: clamp(1.8rem, 6vw, 4rem);
                 margin-bottom: clamp(0.5rem, 2vh, 1rem);
                 background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
@@ -399,8 +401,7 @@
                 </div>
             </div>
         </div>
-        <div class="logo-container">
-            <!-- <div class="logo-container" data-aos="zoom-in" data-aos-delay="300"> -->
+        <div class="logo-container" data-aos="zoom-in" data-aos-delay="300">
             <img src="nonuttoken.svg" alt="No Nut Token Logo">
         </div>
     </section>

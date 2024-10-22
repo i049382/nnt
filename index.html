@@ -6,6 +6,8 @@
         <title>No Nut Token (NoNut)</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <!-- Add this line to import Fredoka One font -->
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         <style>
             * {
                 margin: 0;
@@ -467,12 +469,13 @@
             <a href="#" class="social-link" data-aos="flip-left" data-aos-delay="600">💬</a>
         </div>
     </section>
+    
 
     <script>
         AOS.init({
             // duration: 1000,
             // once: true,
-            // offset: 100
+            //  offset: 0
         });
 
         // Countdown Timer
@@ -495,13 +498,6 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
-    <script>
-        // Add this to the top of your script section
-        window.addEventListener('load', function() {
-            window.scrollTo(0, 0);
-        });
     
-        // ... rest of your existing JavaScript ...
-    </script>
 </body>
 </html>

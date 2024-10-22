@@ -6,8 +6,6 @@
         <title>No Nut Token (NoNut)</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <!-- Add this line to import Fredoka One font -->
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         <style>
             * {
                 margin: 0;
@@ -372,6 +370,18 @@
     
                 /* ... other small mobile styles ... */
             }
+
+            /* Add this to your existing styles */
+            html, body {
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
         </style>
     </head>
 <body>
@@ -496,6 +506,32 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+    </script>
+    <script>
+        // Replace your existing script or add this if you don't have a script tag
+        (function() {
+            window.scrollTo(0, 0);
+            
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                window.scrollTo(0, 0);
+            });
+
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    window.scrollTo(0, 0);
+                }, 0);
+            });
+
+            window.addEventListener('beforeunload', function() {
+                window.scrollTo(0, 0);
+            });
+        })();
+
+        // ... your existing JavaScript ...
     </script>
 </body>
 </html>

@@ -1,252 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Nut Token (NNT)</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background: #0f172a;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        section {
-            min-height: 100vh;
-            padding: 4rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero {
-            text-align: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .launch-timer {
-            background: rgba(59, 130, 246, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 1rem;
-            margin-top: 2rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .logo-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
-        }
-
-        .logo-container svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .slogan {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            color: #94a3b8;
-            margin-bottom: 2rem;
-        }
-
-        .tokenomics {
-            background: #1e293b;
-        }
-
-        .tokenomics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .tokenomics-item {
-            background: #2d3748;
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            height: 100%;
-        }
-
-        .tokenomics-item h3 {
-            color: #60a5fa;
-            margin-bottom: 1rem;
-            font-size: clamp(1rem, 2vw, 1.25rem);
-        }
-
-        .airlock {
-            background: #2d3748;
-        }
-
-        .airlock-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .feature-card {
-            background: rgba(59, 130, 246, 0.1);
-            padding: 2rem;
-            border-radius: 1rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .buy {
-            background: #1e293b;
-        }
-
-        .buy-button {
-            background: #3b82f6;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .buy-button:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-        }
-
-        .community {
-            background: #2d3748;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .social-link {
-            background: #3b82f6;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-            background: #2563eb;
-        }
-
-        section h2 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            margin-bottom: 3rem;
-            color: #60a5fa;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>No Nut Token (NoNut)</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Arial', sans-serif;
+            }
+    
+            body {
+                background: #0f172a;
+                color: #fff;
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+    
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+    
             section {
-                padding: 3rem 1rem;
+                min-height: 100vh;
+                width: 100%;
+                padding: clamp(2rem, 5vh, 4rem) 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
-
+    
+            .hero {
+                position: relative;
+                width: 100vw;
+                height: 100dvh;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: clamp(2rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem);
+                overflow: hidden;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1008%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1009%26quot%3b)'%3e%3c/rect%3e%3cpath d='M803.215%2c552.496C854.158%2c554.246%2c898.341%2c518.99%2c922.387%2c474.045C945.091%2c431.607%2c942.869%2c380.145%2c917.206%2c339.428C893.14%2c301.245%2c848.328%2c283.59%2c803.215%2c284.967C760.594%2c286.268%2c722.155%2c309.203%2c700.67%2c346.036C679.01%2c383.167%2c678.308%2c427.816%2c697.43%2c466.316C719.114%2c509.974%2c754.497%2c550.822%2c803.215%2c552.496' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-126.06 504.87 a132.06 132.06 0 1 0 264.12 0 a132.06 132.06 0 1 0 -264.12 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M154.14 226.87 a102.73 102.73 0 1 0 205.46 0 a102.73 102.73 0 1 0 -205.46 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M495.492%2c332.308C517.429%2c331.485%2c537.838%2c320.918%2c548.927%2c301.973C560.132%2c282.83%2c559.759%2c259.603%2c549.588%2c239.891C538.421%2c218.248%2c519.844%2c198.114%2c495.492%2c198.41C471.477%2c198.702%2c455.432%2c220.262%2c443.629%2c241.179C432.094%2c261.621%2c423.025%2c285.859%2c434.635%2c306.259C446.333%2c326.813%2c471.859%2c333.194%2c495.492%2c332.308' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M642.29 194.92 a101.79 101.79 0 1 0 203.58 0 a101.79 101.79 0 1 0 -203.58 0z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M811.943%2c404.968C839.581%2c406.883%2c867.226%2c393.503%2c880.836%2c369.372C894.244%2c345.599%2c888.734%2c316.777%2c874.978%2c293.204C861.35%2c269.85%2c838.982%2c251.405%2c811.943%2c251.315C784.769%2c251.225%2c760.218%2c268.421%2c748.179%2c292.783C737.298%2c314.801%2c745.68%2c339.495%2c757.816%2c360.847C770.144%2c382.536%2c787.055%2c403.243%2c811.943%2c404.968' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1008'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='15.28%25' y1='-39.29%25' x2='84.72%25' y2='139.29%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1009'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='%2300459e' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+    
+            .hero-content {
+                max-width: 60%;
+                z-index: 1;
+            }
+    
+            .logo-container {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                /* width: 40%; */
+                max-width: 1000px;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+    
+            .logo-container img {
+                aspect-ratio: 4 / 3;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+            }
+    
+            h1 {
+                font-size: clamp(1.8rem, 6vw, 4rem);
+                margin-bottom: clamp(0.5rem, 2vh, 1rem);
+                background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                padding: 0 1rem;
+                text-align: center;
+            }
+    
+            .slogan {
+                font-size: clamp(1rem, 4vw, 1.5rem);
+                color: #94a3b8;
+                margin-bottom: clamp(1rem, 3vh, 2rem);
+                padding: 0 1rem;
+            }
+    
+            .tokenomics {
+                background: #1e293b;
+                padding: clamp(2rem, 5vh, 4rem) 1rem;
+            }
+    
             .tokenomics-grid {
-                grid-template-columns: 1fr;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+                gap: clamp(1rem, 3vw, 2rem);
+                width: 100%;
+                max-width: 1000px;
+                padding: 0 clamp(0.5rem, 2vw, 1rem);
             }
-
+    
+            .tokenomics-item {
+                background: #2d3748;
+                padding: clamp(1.5rem, 4vw, 2rem);
+                border-radius: 1rem;
+                text-align: center;
+                height: 100%;
+            }
+    
+            .tokenomics-item h3 {
+                color: #60a5fa;
+                margin-bottom: clamp(0.5rem, 2vh, 1rem);
+                font-size: clamp(1rem, 3vw, 1.25rem);
+            }
+    
+            .airlock {
+                background: #2d3748;
+                padding: clamp(2rem, 5vh, 4rem) 1rem;
+            }
+    
+            .airlock-features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+                gap: clamp(1rem, 3vw, 2rem);
+                width: 100%;
+                max-width: 1000px;
+                padding: 0 clamp(0.5rem, 2vw, 1rem);
+            }
+    
+            .feature-card {
+                background: rgba(59, 130, 246, 0.1);
+                padding: clamp(1.5rem, 4vw, 2rem);
+                border-radius: 1rem;
+                backdrop-filter: blur(10px);
+            }
+    
+            .feature-card h3 {
+                font-size: clamp(1rem, 3vw, 1.25rem);
+                margin-bottom: 1rem;
+                color: #60a5fa;
+            }
+    
+            .feature-card p {
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+                line-height: 1.6;
+            }
+    
+            .buy {
+                background: #1e293b;
+                padding: clamp(2rem, 5vh, 4rem) 1rem;
+                text-align: center;
+            }
+    
+            .buy-button {
+                background: #3b82f6;
+                color: white;
+                padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+                border-radius: 0.5rem;
+                text-decoration: none;
+                font-size: clamp(1rem, 3vw, 1.2rem);
+                transition: all 0.3s ease;
+                display: inline-block;
+                margin: 0 auto;
+            }
+    
+            .community {
+                background: #2d3748;
+                padding: clamp(2rem, 5vh, 4rem) 1rem;
+                text-align: center;
+            }
+    
             .social-links {
-                gap: 1rem;
+                display: flex;
+                gap: clamp(1rem, 3vw, 2rem);
+                margin-top: clamp(1rem, 3vh, 2rem);
+                flex-wrap: wrap;
+                justify-content: center;
             }
-        }
-
-        .countdown {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            background: rgba(59, 130, 246, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            min-width: 80px;
-        }
-
-        .countdown-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #60a5fa;
-        }
-
-        .countdown-label {
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-    </style>
-</head>
+    
+            .social-link {
+                background: #3b82f6;
+                color: white;
+                width: clamp(50px, 15vw, 60px);
+                height: clamp(50px, 15vw, 60px);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+                transition: all 0.3s ease;
+            }
+    
+            section h2 {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+                margin-bottom: clamp(1.5rem, 4vh, 3rem);
+                color: #60a5fa;
+                text-align: center;
+                padding: 0 1rem;
+            }
+    
+            .countdown {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                gap: clamp(0.5rem, 2vw, 1rem);
+                margin-top: clamp(0.5rem, 2vh, 1rem);
+                width: 100%;
+            }
+    
+            .countdown-item {
+                background: rgba(59, 130, 246, 0.2);
+                padding: clamp(0.5rem, 2vw, 1rem);
+                border-radius: 0.5rem;
+                text-align: center;
+            }
+    
+            .countdown-value {
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+                font-weight: bold;
+                color: #60a5fa;
+            }
+    
+            .countdown-label {
+                font-size: clamp(0.7rem, 2vw, 0.8rem);
+                color: #94a3b8;
+            }
+    
+            /* Enhanced Mobile Styles */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 0 15px;
+                }
+    
+                section {
+                    padding: clamp(1.5rem, 4vh, 3rem) 0;
+                }
+    
+                .hero {
+                    padding: clamp(1rem, 2vh, 1.5rem) 1rem;
+                }
+    
+                h1 {
+                    font-size: clamp(1.5rem, 5vw, 2.5rem);
+                }
+    
+                .slogan {
+                    font-size: clamp(0.9rem, 3vw, 1.2rem);
+                }
+    
+                .launch-timer {
+                    width: 95%;
+                    padding: clamp(0.8rem, 2vw, 1.2rem);
+                }
+    
+                .countdown {
+                    grid-template-columns: repeat(2, 1fr);
+                    max-width: 300px;
+                    margin: 1rem auto 0;
+                    gap: 0.5rem;
+                }
+    
+                .countdown-item {
+                    padding: clamp(0.3rem, 1.5vw, 0.8rem);
+                }
+    
+                .countdown-value {
+                    font-size: clamp(1rem, 3.5vw, 1.3rem);
+                }
+    
+                .countdown-label {
+                    font-size: clamp(0.6rem, 1.8vw, 0.7rem);
+                }
+    
+                .tokenomics-grid, .airlock-features {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+    
+                .tokenomics-item, .feature-card {
+                    padding: clamp(1rem, 3vw, 1.5rem);
+                }
+    
+                .buy-button {
+                    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 1.5rem);
+                    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+                }
+    
+                .social-links {
+                    gap: clamp(0.5rem, 2vw, 1rem);
+                }
+    
+                .social-link {
+                    width: clamp(40px, 12vw, 50px);
+                    height: clamp(40px, 12vw, 50px);
+                    font-size: clamp(1rem, 3.5vw, 1.3rem);
+                }
+            }
+    
+            /* Small Mobile Devices */
+            @media (max-width: 380px) {
+                /* .logo-container {
+                    width: 120px;
+                    height: 120px;
+                } */
+    
+                h1 {
+                    font-size: 1.5rem;
+                }
+    
+                .slogan {
+                    font-size: 0.9rem;
+                }
+    
+                section h2 {
+                    font-size: clamp(1.2rem, 4vw, 1.8rem);
+                }
+    
+                .tokenomics-item h3, .feature-card h3 {
+                    font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+                }
+    
+                .tokenomics-item p, .feature-card p {
+                    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+                }
+            }
+    
+            @media (max-width: 1024px) {
+                .hero-content {
+                    max-width: 100%;
+                    text-align: center;
+                    align-items: center;
+                }
+    
+                /* .logo-container {
+                    width: 100%;
+                    max-width: 300px;
+                    justify-content: center;
+                    left: 50%;
+                    transform: translateX(-50%);
+                } */
+            }
+    
+            @media (max-width: 768px) {
+                .hero {
+                    padding: clamp(1rem, 3vh, 2rem) 1rem;
+                }
+    
+                /* .logo-container {
+                    max-width: 200px;
+                } */
+    
+                /* ... other mobile styles ... */
+            }
+    
+            @media (max-width: 480px) {
+                /* .logo-container {
+                    max-width: 150px;
+                } */
+    
+                /* ... other small mobile styles ... */
+            }
+        </style>
+    </head>
 <body>
     <section class="hero" data-aos="fade-up">
-        <div class="logo-container" data-aos="zoom-in" data-aos-delay="300">
-            <img src="nonuttoken.svg" alt="No Nut Token Logo">
-        </div>
-        <h1>No Nut Token (NNT)</h1>
-        <p class="slogan">The Ultimate HODL Challenge</p>
-        <div class="launch-timer">
-            <h3>Launch Countdown</h3>
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-value" id="days">00</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="hours">00</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="minutes">00</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
+        <div class="hero-content">
+            <h1>No Nut Token ($NoNut)</h1>
+            <p class="slogan">The Ultimate HODL Challenge</p>
+            <div class="launch-timer">
+                <h3>Launch Countdown</h3>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="logo-container" data-aos="zoom-in" data-aos-delay="300">
+            <img src="nonuttoken.svg" alt="No Nut Token Logo">
         </div>
     </section>
 

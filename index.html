@@ -3,426 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Nut Token - Resist the urge, earn the surge!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>No Nut Token (NNT)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
-        :root {
-            --primary-color: #50b3a2;
-            --secondary-color: #333;
-            --text-color: #fff;
-            --bg-color: #0a4d2e;
-            --btn-primary: #50b3a2;
-            --btn-secondary: #fff;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
         }
-        
+
+        body {
+            background: #0f172a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1rem;
         }
-        
-        header {
-            background-color: transparent;
-            position: absolute;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--text-color);
-        }
-        
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-        
-        .nav-links li {
-            margin-left: 20px;
-        }
-        
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn-contact {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .hero {
-            background: url('path_to_forest_background.jpg') no-repeat center center/cover;
+
+        section {
             min-height: 100vh;
+            padding: 4rem 1rem;
             display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+        }
+
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             position: relative;
             overflow: hidden;
         }
-        
-        .hero-content {
-            max-width: 50%;
+
+        .launch-timer {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
         }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+
+        .logo-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
         }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
+
+        .logo-container svg {
+            width: 100%;
+            height: 100%;
         }
-        
-        .hero-description {
-            font-size: 1rem;
-            margin-bottom: 30px;
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
+
+        .slogan {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: #94a3b8;
+            margin-bottom: 2rem;
         }
-        
-        .btn-primary {
-            background-color: var(--btn-primary);
-            color: white;
-        }
-        
-        .btn-secondary {
-            background-color: var(--btn-secondary);
-            color: var(--bg-color);
-        }
-        
-        .mascot {
-            position: absolute;
-            right: 5%;
-            bottom: 0;
-            width: 40%;
-            max-width: 500px;
-            height: auto;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-content {
-                max-width: 100%;
-                padding: 20px;
-            }
-            
-            .mascot {
-                width: 60%;
-                right: -10%;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .btn-contact {
-                display: none;
-            }
-            
-            .logo {
-                font-size: 20px;
-            }
-            
-            .logo-img {
-                width: 30px;
-                height: 30px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-content {
-                text-align: center;
-            }
-            
-            .mascot {
-                width: 80%;
-                right: -20%;
-                bottom: -10%;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .hero-description {
-                font-size: 0.9rem;
-            }
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        
-        .feature {
-            text-align: center;
-            width: 30%;
-            margin-bottom: 40px;
-        }
-        
-        .feature i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
+
         .tokenomics {
-            background-color: var(--bg-color);
+            background: #1e293b;
         }
-        
-        .tokenomics-content {
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .tokenomics-item {
+            background: #2d3748;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            height: 100%;
+        }
+
+        .tokenomics-item h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .airlock {
+            background: #2d3748;
+        }
+
+        .airlock-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .buy {
+            background: #1e293b;
+        }
+
+        .buy-button {
+            background: #3b82f6;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .buy-button:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .community {
+            background: #2d3748;
+        }
+
+        .social-links {
             display: flex;
-            justify-content: space-around;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-link {
+            background: #3b82f6;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            background: #2563eb;
+        }
+
+        section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: #60a5fa;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .tokenomics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+        }
+
+        .countdown {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
-        
-        .tokenomics-item {
+
+        .countdown-item {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
             text-align: center;
-            width: 30%;
-            margin-bottom: 30px;
+            min-width: 80px;
         }
-        
-        .roadmap-item {
-            display: flex;
-            margin-bottom: 50px;
+
+        .countdown-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #60a5fa;
         }
-        
-        .roadmap-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            flex: 1;
-        }
-        
-        .social-links {
-            text-align: center;
-        }
-        
-        .social-links a {
-            font-size: 2rem;
-            margin: 0 10px;
-            color: var(--primary-color);
+
+        .countdown-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="path_to_your_logo.png" alt="No Nut Token Logo" class="logo-img">
-                No Nut Token
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="btn btn-contact">CONTACT US</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-subtitle">Resist the urge, earn the surge!</p>
-                <h1 class="hero-title">$NUT: Future<br>OF Meme Coins</h1>
-                <p class="hero-description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Eveniet dolorem blanditiis ad perferendis, labore delectus
-                    dolor sit amet, adipisicing elit. Eveniet ipsum dolor sit amet.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Whitepaper</a>
-                    <a href="#" class="btn btn-secondary">Buy Token</a>
-                </div>
-            </div>
+    <section class="hero" data-aos="fade-up">
+        <div class="logo-container" data-aos="zoom-in" data-aos-delay="300">
+            <img src="nonuttoken.svg" alt="No Nut Token Logo">
         </div>
-        <img src="nonuttoken.svg" alt="No Nut Token Mascot" class="mascot">
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>About No Nut Token</h2>
-            <p>No Nut Token (NUT) is a revolutionary meme coin that encourages self-discipline and rewards holders for their commitment. Join our community and experience the power of resisting temptation!</p>
-        </div>
-    </section>
-
-    <section id="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="features">
-                <div class="feature" data-aos="fade-up">
-                    <i class="fas fa-lock"></i>
-                    <h3>Self-Control Rewards</h3>
-                    <p>Earn more NUT by participating in our unique staking program</p>
+        <h1>No Nut Token (NNT)</h1>
+        <p class="slogan">The Ultimate HODL Challenge</p>
+        <div class="launch-timer">
+            <h3>Launch Countdown</h3>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
                 </div>
-                <div class="feature" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-users"></i>
-                    <h3>Strong Community</h3>
-                    <p>Join a supportive network of like-minded individuals</p>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
                 </div>
-                <div class="feature" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Growth Potential</h3>
-                    <p>Benefit from our innovative tokenomics and marketing strategies</p>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tokenomics" class="tokenomics">
+    <section class="tokenomics" data-aos="fade-up">
         <div class="container">
             <h2>Tokenomics</h2>
-            <div class="tokenomics-content">
-                <div class="tokenomics-item" data-aos="zoom-in">
-                    <h3>Total Supply</h3>
-                    <p>1,000,000,000 NUT</p>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-item" data-aos="fade-right" data-aos-delay="200">
+                    <h3>Launch Platform</h3>
+                    <p>Moonshot by DexScreener</p>
                 </div>
-                <div class="tokenomics-item" data-aos="zoom-in" data-aos-delay="200">
-                    <h3>Liquidity Pool</h3>
-                    <p>50%</p>
+                <div class="tokenomics-item" data-aos="fade-left" data-aos-delay="400">
+                    <h3>Launch Date</h3>
+                    <p>November 1st, 2024</p>
                 </div>
-                <div class="tokenomics-item" data-aos="zoom-in" data-aos-delay="400">
-                    <h3>Community Rewards</h3>
-                    <p>30%</p>
+                <div class="tokenomics-item" data-aos="fade-right" data-aos-delay="600">
+                    <h3>Liquidity</h3>
+                    <p>Locked Forever via Airlock</p>
                 </div>
-                <div class="tokenomics-item" data-aos="zoom-in" data-aos-delay="600">
-                    <h3>Development</h3>
-                    <p>10%</p>
-                </div>
-                <div class="tokenomics-item" data-aos="zoom-in" data-aos-delay="800">
-                    <h3>Marketing</h3>
-                    <p>10%</p>
+                <div class="tokenomics-item" data-aos="fade-left" data-aos-delay="800">
+                    <h3>Rewards</h3>
+                    <p>Daily Airdrops to Top 50 Holders</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="roadmap">
+    <section class="airlock" data-aos="fade-up">
         <div class="container">
-            <h2>Roadmap</h2>
-            <div class="roadmap-item" data-aos="fade-right">
-                <div class="roadmap-content">
-                    <h3>Phase 1: Launch</h3>
-                    <ul>
-                        <li>Token creation and deployment</li>
-                        <li>Website and social media launch</li>
-                        <li>Community building</li>
-                    </ul>
+            <h2>Airlock Features</h2>
+            <div class="airlock-features">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>🌙 Daily Rewards</h3>
+                    <p>Automatic airdrops every ~24 hours to top 50 holders</p>
                 </div>
-            </div>
-            <div class="roadmap-item" data-aos="fade-left">
-                <div class="roadmap-content">
-                    <h3>Phase 2: Growth</h3>
-                    <ul>
-                        <li>Exchange listings</li>
-                        <li>Marketing campaigns</li>
-                        <li>Partnership announcements</li>
-                    </ul>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>🔥 Token Burns</h3>
+                    <p>Token portion of rewards is automatically burned</p>
                 </div>
-            </div>
-            <div class="roadmap-item" data-aos="fade-right">
-                <div class="roadmap-content">
-                    <h3>Phase 3: Expansion</h3>
-                    <ul>
-                        <li>Launch of NUT staking platform</li>
-                        <li>Mobile app development</li>
-                        <li>Charity initiatives</li>
-                    </ul>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <h3>🔒 LP Security</h3>
+                    <p>Liquidity permanently locked through Meteora</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="800">
+                    <h3>📈 Fair Distribution</h3>
+                    <p>Devs earn only through holding - no special privileges</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="community">
-        <div class="container">
-            <h2>Join Our Community</h2>
-            <div class="social-links">
-                <a href="#" data-aos="zoom-in"><i class="fab fa-twitter"></i></a>
-                <a href="#" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-telegram"></i></a>
-                <a href="#" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-discord"></i></a>
-                <a href="#" data-aos="zoom-in" data-aos-delay="600"><i class="fab fa-reddit"></i></a>
-            </div>
+    <section class="buy" data-aos="fade-up">
+        <h2>How to Buy</h2>
+        <a href="#" class="buy-button" data-aos="zoom-in" data-aos-delay="300">
+            Launch on Moonshot
+        </a>
+    </section>
+
+    <section class="community" data-aos="fade-up">
+        <h2>Join Our Community</h2>
+        <div class="social-links">
+            <a href="#" class="social-link" data-aos="flip-left" data-aos-delay="200">𝕏</a>
+            <a href="#" class="social-link" data-aos="flip-left" data-aos-delay="400">📱</a>
+            <a href="#" class="social-link" data-aos="flip-left" data-aos-delay="600">💬</a>
         </div>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1000,
-            once: true
+            once: true,
+            offset: 100
         });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const launchDate = new Date('2024-11-01T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>

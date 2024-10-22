@@ -6,10 +6,6 @@
         <title>No Nut Token (NoNut)</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-        <!-- Update this line to preconnect to Google Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <!-- Update the font import to include multiple weights and a fallback font -->
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Arial:wght@400;700&display=swap" rel="stylesheet">
         <style>
             * {
                 margin: 0;
@@ -23,7 +19,6 @@
                 color: #fff;
                 line-height: 1.6;
                 overflow-x: hidden;
-                font-family: 'Arial', sans-serif;
             }
     
             .container {
@@ -84,9 +79,7 @@
             }
     
             h1 {
-                /* Update the font-family property */
-                font-family: 'Fredoka', 'Arial', sans-serif;
-                font-weight: 700;
+                font-family: 'Fredoka One', cursive; /* Apply Fredoka One font */
                 font-size: clamp(1.8rem, 6vw, 4rem);
                 margin-bottom: clamp(0.5rem, 2vh, 1rem);
                 background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
@@ -478,10 +471,12 @@
 
     <script>
         AOS.init({
-            // duration: 1000,
-            // once: true,
-            //  offset: 0
+            duration: 1000,
+            once: true,
+             offset: 0,
+             excludeElements: 'body'
         });
+        document.body.setAttribute('data-aos-easing', 'none');
 
         // Countdown Timer
         function updateCountdown() {

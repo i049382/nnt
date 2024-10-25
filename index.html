@@ -157,7 +157,7 @@
             }
     
             .feature-card h3 {
-                font-size: clamp(1rem, 3vw, 1.25rem);
+                font-size: clamp(1rem, 5vw, 1.25rem);
                 margin-bottom: 1rem;
                 color: #60a5fa;
             }
@@ -214,7 +214,7 @@
             }
     
             section h2 {
-                font-size: clamp(1.5rem, 5vw, 2.5rem);
+                font-size: clamp(1.5rem, 8vw, 2.5rem);
                 margin-bottom: clamp(1.5rem, 4vh, 3rem);
                 color: #60a5fa;
                 text-align: center;
@@ -814,7 +814,7 @@
             <div class="airlock-features">
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="1000">
                     <h3>📝 Token CA</h3>
-                    <p>TBC</p>
+                    <p class="wallet-address">TBC</p>
                 </div>
 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="1000">
@@ -824,6 +824,7 @@
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="1200">
                     <h3>📢 Marketing Wallet</h3>
                     <p class="wallet-address">7q9jX1Tqwrqsjo9RYV16mPvYVTtWFxoq2NCxhRnvaDcR</p>
+                    <p>Dnoations accepted. Proceeds will be used to for marketing acitviies such as paying for trending.</p>
                 </div>
             </div>
         </div>
@@ -926,7 +927,15 @@
             <p class="confession-intro">Submit your funniest No Nut confessions anonymously along with your wallet address. The most liked confessions will win an airdrop!</p>
             <form id="confession-form" class="confession-form">
                 <textarea name="confession" id="confession" rows="4" placeholder="Share your funny No Nut confession..." required></textarea>
-                <input type="text" name="wallet" id="wallet" placeholder="Your Solana wallet address" required>
+                <input 
+                    type="text" 
+                    name="wallet" 
+                    id="wallet" 
+                    placeholder="Your Solana wallet address" 
+                    pattern="[1-9A-HJ-NP-Za-km-z]{32,44}"
+                    title="Please enter a valid Solana wallet address"
+                    required
+                >
                 <button type="submit" class="submit-button">Submit No Nut Confession</button>
             </form>
             <div id="submission-message" class="submission-message"></div>
@@ -1046,6 +1055,18 @@
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 768 && !e.target.closest('.top-nav')) {
                 navLinks.classList.remove('show');
+            }
+        });
+
+        // Wallet address validation
+        document.getElementById('wallet').addEventListener('input', function(e) {
+            const walletRegex = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+            if (this.value && !walletRegex.test(this.value)) {
+                this.setCustomValidity('Please enter a valid Solana wallet address');
+                this.classList.add('invalid');
+            } else {
+                this.setCustomValidity('');
+                this.classList.remove('invalid');
             }
         });
     </script>

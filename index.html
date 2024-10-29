@@ -35,13 +35,13 @@
             }
     
             section {
-                min-height: 100vh;
+                min-height: 50vh;
                 width: 100%;
                 padding: clamp(2rem, 5vh, 4rem) 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                /* justify-content: center; */
             }
     
             .hero {
@@ -110,6 +110,45 @@
             .tokenomics {
                 background: #1e293b;
                 padding: clamp(2rem, 5vh, 4rem) 1rem;
+                position: relative;  /* Add this */
+                overflow: hidden;    /* Add this */
+            }
+    
+            /* Add these new styles for the tokenomics images */
+            .tokenomics-top-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 150px;
+                height: auto;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+    
+            .tokenomics-bottom-image {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 150px;
+                height: auto;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+    
+            @media (max-width: 768px) {
+                .tokenomics-top-image {
+                    top: -7vw;
+                    width: 50vw;
+                    left: -5vw;
+                    z-index: 0;
+                }
+    
+                .tokenomics-bottom-image {
+                    bottom: -5vw;
+                    width: 60vw;
+                    right: 0vw;
+                    z-index: 0;
+                }
             }
     
             .tokenomics-grid {
@@ -122,7 +161,7 @@
             }
     
             .tokenomics-item {
-                background: #2d3748;
+                background: #2d3748cc;
                 padding: clamp(1.5rem, 4vw, 2rem);
                 border-radius: 1rem;
                 text-align: center;
@@ -250,6 +289,46 @@
             .roadmap {
                 background: #1e293b;
                 padding: clamp(2rem, 5vh, 4rem) 1rem;
+                position: relative;
+                overflow: hidden;  /* Keep this to prevent image overflow */
+            }
+    
+            .roadmap-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 150px;
+                height: auto;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+    
+            /* Add this new CSS for the bottom image */
+            .roadmap-bottom-image {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 150px;
+                height: auto;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+    
+            @media (max-width: 768px) {
+                .roadmap-image {
+                    top: -7vw;
+        width: 50vw;
+        left: -5vw;
+        z-index: 0;
+                }
+    
+                /* Add mobile styles for bottom image */
+                .roadmap-bottom-image {
+                    bottom: -7vw;
+        width: 40vw;
+        left: 0vw;
+        z-index: 1;
+                }
             }
     
             .timeline {
@@ -333,6 +412,7 @@
             @media (max-width: 768px) {
                 .container {
                     padding: 0 15px;
+                    z-index:1;
                 }
     
                 section {
@@ -402,12 +482,13 @@
                 }
     
                 .timeline::before {
-                    left: 1rem;
+                    left: 1rem;  /* Move the timeline line to the left */
                 }
     
                 .timeline-item {
-                    width: 100%;
-                    padding: 0 0 0 3rem;
+                    width: calc(100% - 2rem);  /* Full width minus some padding */
+                    padding: 1rem 0 1rem 3rem !important;  /* Consistent padding for all items */
+                    left: 0 !important;  /* Reset left positioning */
                 }
     
                 .timeline-item:nth-child(odd),
@@ -417,7 +498,11 @@
                 }
     
                 .timeline-content::before {
-                    left: -2.5rem !important;
+                    left: -2.5rem !important;  /* Consistent positioning of dots */
+                }
+    
+                .timeline-content {
+                    width: 100%;  /* Full width */
                 }
             }
     
@@ -493,12 +578,14 @@
     
             .confession-form {
                 display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                max-width: 500px;
-                margin: 0 auto;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    width: 100%;
             }
-    
+            .confession-form textarea{
+                height:150px
+            }
             .confession-form textarea,
             .confession-form input {
                 padding: 0.5rem;
@@ -785,6 +872,7 @@
     </section>
 
     <section id="tokenomics" class="tokenomics" data-aos="fade-up">
+        <!-- <img src="holdnut.webp" alt="Hold Nut" class="tokenomics-top-image" data-aos="fade-right"> -->
         <div class="container">
             <h2>Tokenomics</h2>
             <div class="tokenomics-grid">
@@ -798,14 +886,15 @@
                 </div>
                 <div class="tokenomics-item" data-aos="fade-right" data-aos-delay="600">
                     <h3>Liquidity</h3>
-                    <p>Locked Forever via Raydium</p>
+                    <p>Locked Forever via Meteora</p>
                 </div>
-                <!-- <div class="tokenomics-item" data-aos="fade-left" data-aos-delay="800">
+                <div class="tokenomics-item" data-aos="fade-left" data-aos-delay="800">
                     <h3>Rewards</h3>
                     <p>Daily Airdrops to Top 50 Holders</p>
-                </div> -->
+                </div>
             </div>
         </div>
+        <img src="wenlambo.png" alt="No Nut Wen Lambo" class="tokenomics-bottom-image" data-aos="fade-left">
     </section>
 
     <section id="wallets" class="airlock" data-aos="fade-up">
@@ -855,6 +944,7 @@
     </style>
 
     <section id="roadmap" class="roadmap" data-aos="fade-up">
+        <img src="holdnut.webp" alt="Hold Nut" class="roadmap-image" data-aos="fade-right">
         <div class="container">
             <h2>Roadmap</h2>
             <div class="timeline">
@@ -895,6 +985,7 @@
                 </div>
             </div>
         </div>
+        <img src="nonutchart.webp" alt="No Nut Chart" class="roadmap-bottom-image" data-aos="fade-left">
     </section>
 
 
